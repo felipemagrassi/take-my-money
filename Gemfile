@@ -14,6 +14,9 @@ gem 'sprockets-rails'
 # Use postgres as main database
 gem 'pg'
 
+gem 'dotenv'
+gem 'stripe'
+
 # Auth
 gem 'devise'
 
