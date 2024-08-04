@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddsToCart
   attr_accessor :user, :performance, :count, :success
 
@@ -8,10 +10,11 @@ class AddsToCart
     @success = false
   end
 
-  def run 
-    Ticket.transaction do 
+  def run
+    Ticket.transaction do
       tickets = performance.unsold_tickets(count)
       return if tickets.size != count
+
       tickets.each { |ticket| ticket.place_in_cart_for(user) }
       self.success = tickets.all?(&:valid?)
       success

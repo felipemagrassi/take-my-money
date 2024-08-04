@@ -12,9 +12,6 @@
 Event.create(name: 'romeo')
 Event.create(name: 'bums')
 
-Event.all.each do |event| 
+Event.all.each do |event|
   event.performances.create(start_time: 2.days.ago, end_time: 2.days.ago + 40.minutes)
 end
-
-
-

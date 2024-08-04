@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ShoppingCart
   attr_accessor :user
 
@@ -5,7 +7,7 @@ class ShoppingCart
     @user = user
   end
 
-  def tickets 
+  def tickets
     @tickets ||= user.tickets_in_cart
   end
 
@@ -25,8 +27,8 @@ class ShoppingCart
 
   def performances_for(event)
     tickets.map(&:performance)
-      .select { |performance|  performance.event == event }
-      .uniq.sort_by(&:start_time)
+           .select { |performance| performance.event == event }
+           .uniq.sort_by(&:start_time)
   end
 
   def subtotal_for(performance)

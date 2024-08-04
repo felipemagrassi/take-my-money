@@ -8,9 +8,9 @@ ruby '3.3.3'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
-gem "slim-rails"
 gem 'autoprefixer-rails'
+gem 'slim-rails'
+gem 'sprockets-rails'
 # Use postgres as main database
 gem 'pg'
 
@@ -67,9 +67,9 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'better_html'
+  gem 'erb_lint', '~> 0.6.0'
   gem 'web-console'
-  gem "erb_lint", "~> 0.6.0"
-  gem "better_html"
 
   gem 'rubocop'
   gem 'rubocop-rails'
@@ -88,4 +88,3 @@ group :test do
   gem 'faker'
   gem 'selenium-webdriver'
 end
-

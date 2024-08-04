@@ -1,7 +1,7 @@
 # encoding : utf-8
+# frozen_string_literal: true
 
 MoneyRails.configure do |config|
-
   # To set the default currency
   #
   config.default_currency = :usd
@@ -47,15 +47,15 @@ MoneyRails.configure do |config|
   #
   # Example:
   config.register_currency = {
-    priority:            1,
-    iso_code:            "USD",
-    name:                "United States Dollars",
-    symbol:              "USD $",
-    symbol_first:        true,
-    subunit:             "Cent",
-    subunit_to_unit:     100,
-    thousands_separator: ",",
-    decimal_mark:        "."
+    priority: 1,
+    iso_code: 'USD',
+    name: 'United States Dollars',
+    symbol: 'USD $',
+    symbol_first: true,
+    subunit: 'Cent',
+    subunit_to_unit: 100,
+    thousands_separator: ',',
+    decimal_mark: '.'
   }
 
   # Specify a rounding mode

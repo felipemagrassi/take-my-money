@@ -5,6 +5,6 @@ class Performance < ApplicationRecord
   has_many :tickets
 
   def unsold_tickets(count)
-    tickets.where(status: "unsold").limit(count)
+    tickets.where(status: 'unsold').limit(count)
   end
 end
