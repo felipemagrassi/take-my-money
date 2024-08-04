@@ -1,10 +1,10 @@
 # encoding : utf-8
-# frozen_string_literal: true
 
 MoneyRails.configure do |config|
+
   # To set the default currency
   #
-  # config.default_currency = :usd
+  config.default_currency = :usd
 
   # Set default bank object
   #
@@ -21,7 +21,7 @@ MoneyRails.configure do |config|
   # To handle the inclusion of validations for monetized fields
   # The default value is true
   #
-  # config.include_validations = true
+  config.include_validations = true
 
   # Default ActiveRecord migration configuration values for columns:
   #
@@ -46,17 +46,17 @@ MoneyRails.configure do |config|
   # Register a custom currency
   #
   # Example:
-  # config.register_currency = {
-  #   priority:            1,
-  #   iso_code:            "EU4",
-  #   name:                "Euro with subunit of 4 digits",
-  #   symbol:              "€",
-  #   symbol_first:        true,
-  #   subunit:             "Subcent",
-  #   subunit_to_unit:     10000,
-  #   thousands_separator: ".",
-  #   decimal_mark:        ","
-  # }
+  config.register_currency = {
+    priority:            1,
+    iso_code:            "USD",
+    name:                "United States Dollars",
+    symbol:              "USD $",
+    symbol_first:        true,
+    subunit:             "Cent",
+    subunit_to_unit:     100,
+    thousands_separator: ",",
+    decimal_mark:        "."
+  }
 
   # Specify a rounding mode
   # Any one of:
@@ -89,7 +89,7 @@ MoneyRails.configure do |config|
   #
   # Example (using default localization from rails-i18n):
   #
-  # I18n.locale = :en
+  I18n.locale = :en
   # Money.new(10_000_00, 'USD').format # => $10,000.00
   # I18n.locale = :es
   # Money.new(10_000_00, 'USD').format # => $10.000,00
